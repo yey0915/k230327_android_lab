@@ -14,3 +14,5 @@ dependencyResolutionManagement {
 }
 rootProject.name = "K230327_Android_Lab"
 include ':app'
+include ':extest0221'
+include ':test6_yey'
