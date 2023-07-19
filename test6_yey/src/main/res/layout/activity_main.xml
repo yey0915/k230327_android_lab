@@ -12,17 +12,80 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:textSize="30sp"/>
+        android:textSize="30sp"
+        android:fontFamily="@font/yeongdeoksea"/>
     <Button
+        android:id="@+id/btn0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button1"
-        android:textSize="50sp"/>
+        android:text="ON/OFF"
+        android:backgroundTint="@color/material_dynamic_tertiary60"
+        android:textSize="20sp"
+        android:padding="10sp"
+        android:fontFamily="@font/yeongdeoksea"/>
+    <Button
+        android:id="@+id/btn1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이미지 사라지기"
+        android:backgroundTint="@color/material_dynamic_tertiary60"
+        android:textSize="20sp"
+        />
+    <Button
+        android:id="@+id/btn2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이미지 보이기"
+        android:backgroundTint="@color/material_dynamic_tertiary60"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인"
+        android:backgroundTint="@color/material_dynamic_tertiary60"
+        android:textSize="20sp"/>
+    <Button
+        android:id="@+id/btnJoin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:backgroundTint="@color/material_dynamic_tertiary60"
+        android:textSize="20sp"/>
 
     <ImageView
+        android:id="@+id/img1"
+        android:layout_width="match_parent"
+        android:layout_height="269dp"
+        android:padding="5sp"
+        android:src="@drawable/book2_2" />
+    <EditText
+        android:id="@+id/idInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/book2"/>
+        android:hint="아이디 입력"
+        android:textSize="20sp"/>
+    <EditText
+        android:id="@+id/pwdInput"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="비밀번호 입력"
+        android:textSize="20sp"/>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal" >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="텍스트 1"
+            android:textSize="15sp"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="텍스트 2"
+            android:textSize="15sp"/>
+    </LinearLayout>
 
 </LinearLayout>

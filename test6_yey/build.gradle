@@ -30,6 +30,11 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    //findByViewId : 각 뷰 객체별로 하나하나 접근을 한다면
+    //뷰 바인딩. 하나의 객체에 뷰 모두를 다 담아서 한곳에서 처리
+    viewBinding{
+        enabled = true
+    }
 }
 
 dependencies {
