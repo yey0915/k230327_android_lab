@@ -12,9 +12,10 @@ import com.example.test6_yey.databinding.ActivityMainBinding
 //AppCompatActivity() : 상속 받은 클래스가 시스템 컴포넌트로 바뀐다.
 //액티비티 : 화면에 그리는 역할
 class MainActivity : AppCompatActivity() {
+    var status : Int = 0
     //onCreate : 최초에 한번 화면에 출력을 하는 역할
     override fun onCreate(savedInstanceState: Bundle?) {
-        var status : Int = 0
+
 
         //뷰바인딩 적용1
         //ActivityMainBinding : 시스템에서 바인딩해준다.
