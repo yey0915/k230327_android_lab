@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        android:text="@string/app_mainTitle"
         android:textSize="30sp"
         android:fontFamily="@font/yeongdeoksea"/>
     <Button
@@ -75,16 +75,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:orientation="horizontal" >
+        android:orientation="vertical" >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="텍스트 1"
+            android:text="@string/app_footCompanyHead"
             android:textSize="15sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="텍스트 2"
+            android:text="@string/app_footCompanyAddress"
             android:textSize="15sp"/>
     </LinearLayout>
 

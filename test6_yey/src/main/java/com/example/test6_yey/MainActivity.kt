@@ -35,19 +35,19 @@ class MainActivity : AppCompatActivity() {
         //버튼에 이벤트 클릭 리스너 설정 후 -> 결과로 이미지의 속성 중에
         //visibility 속성으로 show / hide 테스트
         //binding 객체 안에, 사용하는 뷰의 모든 객체가 다 담아져 있습니다.
-        binding.btn1.setOnClickListener {
-            binding.img1.visibility = View.GONE
+        binding.btn1?.setOnClickListener {
+            binding.img1?.visibility = View.GONE
         }
-        binding.btn2.setOnClickListener{
-            binding.img1.visibility = View.VISIBLE
+        binding.btn2?.setOnClickListener{
+            binding.img1?.visibility = View.VISIBLE
         }
 
-        binding.btn0.setOnClickListener {
+        binding.btn0?.setOnClickListener {
             if(status == 0){
-                binding.img1.visibility = View.GONE
+                binding.img1?.visibility = View.GONE
                 status = 1
             }else{
-                binding.img1.visibility = View.VISIBLE
+                binding.img1?.visibility = View.VISIBLE
                 status = 0
             }
 
@@ -59,15 +59,15 @@ class MainActivity : AppCompatActivity() {
 
 
         //회원가입 버튼 클릭시 해당 액티비티 화면이동
-        binding.btnJoin.setOnClickListener {
+        binding.btnJoin?.setOnClickListener {
             // 인텐트 라는 개념에 가장 기초인 화면 전환
             val intent = Intent(this@MainActivity, JoinActivity::class.java)
             startActivity(intent)
         }
 
-        binding.btnLogin.setOnClickListener {
-            val id : String = binding.idInput.text.toString()
-            val pwd : String = binding.pwdInput.text.toString()
+        binding.btnLogin?.setOnClickListener {
+            val id : String = binding.idInput?.text.toString()
+            val pwd : String = binding.pwdInput?.text.toString()
             Log.d("hiesa", "id값은 : $id, pwd값은 : $pwd")
             Toast.makeText(this@MainActivity, "id의 값 : $id, pw의 값 : $pwd", Toast.LENGTH_SHORT).show()
         }
