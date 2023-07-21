@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
         <activity
+            android:name=".GitActivity"
+            android:exported="false" />
+        <activity
             android:name=".JetActivity"
             android:exported="true" />
         <activity
