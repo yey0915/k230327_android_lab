@@ -16,11 +16,13 @@ import com.example.test10_11_12.R
 import com.example.test10_11_12.Recycle2Activity
 import com.example.test10_11_12.adapter.MyAdapter
 import com.example.test10_11_12.databinding.ActivityMain378Binding
+import com.example.test10_11_12.databinding.ItemRecyclerviewBinding
 
 class MainActivity378 : AppCompatActivity() {
+    lateinit var binding : ActivityMain378Binding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val binding = ActivityMain378Binding.inflate(layoutInflater)
+        binding = ActivityMain378Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
@@ -30,12 +32,12 @@ class MainActivity378 : AppCompatActivity() {
             datas.add("Item $i")
         }
 
-        //리사이클러 뷰 설정
+        //리샤이클 뷰의 설정
         val layoutManager = LinearLayoutManager(this)
         binding.recyclerview.layoutManager=layoutManager
         val adapter= MyAdapter(datas)
         binding.recyclerview.adapter=adapter
-        binding.recyclerview.addItemDecoration(Recycle2Activity.MyDecoration(this))
+        binding.recyclerview.addItemDecoration(MyDecoration(this))
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

@@ -16,6 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
         <activity
+            android:name=".test12.MainActivity389"
+            android:exported="true" />
+        <activity
+            android:name=".test12.MainActivity388"
+            android:exported="true" />
+        <activity
+            android:name=".test12.MainActivity385"
+            android:exported="true" />
+        <activity
+            android:name=".test12.MainActivity384"
+            android:exported="true" />
+        <activity
+            android:name=".test12.MainActivity378"
+            android:exported="true" />
+        <activity
             android:name=".JetActivity"
             android:exported="true" />
         <activity
