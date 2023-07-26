@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <!--미디어 서버 접근시 허가 부분 변경해야 함
+    https://developer.android.com/about/versions/13/behavior-changes-13?hl=ko
+    세분화된 미디어 권한-->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
+    <!--구글지도 권한 관련-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--전화 권한 관련-->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,9 +26,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
         <activity
+            android:name=".test16.ImageActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test18.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test13.MainActivity443"
+            android:exported="true" />
+        <activity
             android:name=".test13.MainActivity426"
             android:exported="true"
-            android:windowSoftInputMode="adjustResize"/>
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".test13.MainActivity424"
             android:exported="true" />
@@ -32,7 +58,7 @@
             android:exported="false" />
         <activity
             android:name=".test16.MainActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".test13.MainActivity"
             android:exported="true">
@@ -42,6 +68,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--각자 페키지명으로 수정하기
+            com.yey.test13_16_17_18.test16
+            2. @@xml/file_paths-->
+        <provider android:name="androidx.core.content.FileProvider"
+            android:authorities="com.yey.test13_16_17_18.test16.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"></meta-data>
+        </provider>
     </application>
 
 </manifest>
