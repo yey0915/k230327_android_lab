@@ -53,6 +53,7 @@ class ImageActivity : AppCompatActivity() {
             ActivityResultContracts.StartActivityForResult())
         {
             try {
+                //갤러리에서 선택된 이미지를 받아서, 처리 합니다.
                 val calRatio = calculateInSampleSize(
                     it.data!!.data!!,
                     resources.getDimensionPixelSize(R.dimen.imgSize),
@@ -61,11 +62,17 @@ class ImageActivity : AppCompatActivity() {
                 val option = BitmapFactory.Options()
                 option.inSampleSize = calRatio
 
+                //파일 입력 출력, 아래 코드
+                //사진을 바이트 단위로 읽었음. inputStream : 이미지의 바이트 단위의 결과값
                 var inputStream = contentResolver.openInputStream(it.data!!.data!!)
+                //decodeStream : 바이트로 읽어서 살제 이미지의 타입으로 변환. 단위 bitmap로 변환
+                //bitmap 안드로이드 사용하는 이미지 단위이고, 보통, 네트워크, 파일io 할 때 자주 이용됨.
                 val bitmap = BitmapFactory.decodeStream(inputStream, null, option)
                 inputStream!!.close()
                 inputStream = null
 
+                //사진 -> 바이트 읽어서 -> inputStream -> decodeStream -> bimap -> 뷰에 처리
+                //이미지, 영상 관련 인코딩
                 bitmap?.let {
                     Log.d("kkang", "결과뷰에 적용 전")
                     //결과 뷰에 갤러리에서 가져온 사진을 할당 부분
@@ -122,6 +129,7 @@ class ImageActivity : AppCompatActivity() {
             val timeStamp: String =
                 SimpleDateFormat("yyyyMMdd_HHmmss").format(Date())
             val storageDir: File? = getExternalFilesDir(Environment.DIRECTORY_PICTURES)
+            Log.d("yey", "storageDir(Environment.DIRECTORY_PICTURES)의 위치 : $storageDir")
             val file = File.createTempFile(
                 "JPEG_${timeStamp}_",
                 ".jpg",
@@ -129,6 +137,7 @@ class ImageActivity : AppCompatActivity() {
             )
             //물리 파일의 실제 경로
             filePath = file.absolutePath
+            Log.d("yey", "filePath의 경로 : $filePath")
             //카메라에서 찍은 사진에 접근 하기위해서, 콘텐츠 프로바이더에 요청
             //요청시, 매니페스트에서 정한 같은 문자열을 저장한다.
             val photoURI: Uri = FileProvider.getUriForFile(

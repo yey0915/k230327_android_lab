@@ -4,19 +4,19 @@
     <uses-feature
         android:name="android.hardware.telephony"
         android:required="false" />
+
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <!--미디어 서버 접근시 허가 부분 변경해야 함
+    <!--
+    미디어 서버 접근시 허가 부분 변경해야 함
     https://developer.android.com/about/versions/13/behavior-changes-13?hl=ko
-    세분화된 미디어 권한-->
+    세분화된 미디어 권한
+    -->
     <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" />
-    <!--구글지도 권한 관련-->
+    <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> <!-- 구글지도 권한 관련 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-    <!--전화 권한 관련-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- 전화 권한 관련 -->
     <uses-permission android:name="android.permission.CALL_PHONE" />
-
 
     <application
         android:allowBackup="true"
@@ -25,6 +25,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.K230327_Android_Lab">
+        <activity
+            android:name=".test17sharedporferences.DetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test17sharedporferences.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".test16multiImg.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".test17_crud.MainActivity"
+            android:exported="true" />
         <activity
             android:name=".test16.ImageActivity"
             android:exported="true" />
@@ -68,16 +80,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <!--각자 페키지명으로 수정하기
+        <!--
+각자 페키지명으로 수정하기
             com.yey.test13_16_17_18.test16
-            2. @@xml/file_paths-->
-        <provider android:name="androidx.core.content.FileProvider"
+            2. @@xml/file_paths
+        -->
+        <provider
+            android:name="androidx.core.content.FileProvider"
             android:authorities="com.yey.test13_16_17_18.test16.fileprovider"
             android:exported="false"
             android:grantUriPermissions="true">
-            <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
-                android:resource="@xml/file_paths"></meta-data>
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
         </provider>
     </application>
 
